@@ -4,7 +4,7 @@
   <script type="text/javascript" src="//libs.glia.com/axon.js"></script>
 </head>
 <script>
-  const googleApiKey = 'AIzaSyAAOdmLg_aDi66_Ab6VLp_HndQBbYsxz3M';
+  const googleApiKey = '${APIkey}';
   // Example POST method implementation:
   async function translateTexts(texts, source, target) {
     let body = {
@@ -46,7 +46,7 @@
       });
       msgTbl.replaceChild(newBody, msgTbl.tBodies[0]);
       //Take the content of messages, translate and add to the table
-      translateTexts(reversedMessages.map(m => m.content), "en", "et")
+      translateTexts(reversedMessages.map(m => m.content), "en", "es")
         .then((translationPayload) => {
           console.debug("Received translation response: " + JSON.stringify(translationPayload));
           if (translationPayload.data.translations) {
@@ -101,7 +101,7 @@
     <thead>
       <tr>
         <th>English</th>
-        <th>Estonian</th>
+        <th>Spanish</th>
       </tr>
     </thead>
     <tbody>
@@ -110,7 +110,7 @@
       <tr>
         <td></td>
         <td>
-          <form id="msgForm"><input type="text" id="msgInput" size="50"></form>
+          <form id="msgForm"></form>
         </td>
       </tr>
     </tbody>
