@@ -65,7 +65,7 @@
     let msgInput = document.getElementById("msgInput");
     if (msgInput.value && msgInput.value.length > 0) {
       let texts = [msgInput.value];
-      translateTexts(texts, "et", "en")
+      translateTexts(texts, "es", "en")
         .then((translationPayload) => {
           console.debug("Received translation response: " + JSON.stringify(translationPayload));
           if (translationPayload.data.translations && translationPayload.data.translations.length > 0) {
